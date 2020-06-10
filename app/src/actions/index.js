@@ -1,7 +1,8 @@
+import axios from 'axios'
 export const FETCH_FOXES = 'FETCH_FOXES';
 
-export const getFoxes = () => {
+export const getFoxes = () => dispatch => {
   return {
-    type: FETCH_FOXES
+    dispatch ({type: FETCH_FOXES});
   };
 };

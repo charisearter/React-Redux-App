@@ -1,5 +1,8 @@
+import { FETCH_FOXES } from '../actions';
+
 const initialState = {
-  foxes: {}
+  foxes: {},
+  isFetchingData: false
 };
 
 
@@ -12,7 +15,11 @@ const initialState = {
 
 export const foxReducer = (state= initialState, action) => {
   switch(action.type){
-    //case FETCH_FOXES
+    case FETCH_FOXES:
+      return {
+        ...state,
+        isFetchingData: true
+      };
     default:
       return state;
   }
