@@ -1,4 +1,4 @@
-import { FETCH_FOXES } from '../actions';
+import { FETCH_FOXES, UPDATE_FOXES } from '../actions';
 
 const initialState = {
   foxes: {},
@@ -6,12 +6,6 @@ const initialState = {
 };
 
 
-// export const getFoxes = () => {
-//   return {
-
-
-//   }
-// };
 
 export const foxReducer = (state= initialState, action) => {
   switch(action.type){
@@ -20,6 +14,12 @@ export const foxReducer = (state= initialState, action) => {
         ...state,
         isFetchingData: true
       };
+      case UPDATE_FOXES:
+        return {
+          ...state,
+          foxes: action.payload,
+          isFetchingData: false
+        };
     default:
       return state;
   }
