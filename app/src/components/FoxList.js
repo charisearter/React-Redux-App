@@ -4,15 +4,16 @@ import { connect } from 'react-redux';
 const FoxList = props => {
   return (
     <Fragment>
-      {props.foxes.map(fox => (
-        <div> <img src={fox.image} alt='fox or foxes'/> <p> {fox.link} </p> </div>
-      ))}
+      
+        <div> <img src={props.foxes.image} alt='fox or foxes'/> <p> {props.foxes.link} </p> </div>
+     
 
     </Fragment>
   );
 };
 
 const mapStateToProps = state => {
+  console.log(state)
   return {
     foxes: state.foxes
   };

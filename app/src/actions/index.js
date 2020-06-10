@@ -9,11 +9,11 @@ export const getFoxes = () => dispatch => {
 
     dispatch({ type: FETCH_FOXES });
     axios
-      .get('https://randomfox.ca/floof')
+      .get('https://cors-anywhere.herokuapp.com/https://randomfox.ca/floof/')
       .then(res => {
         console.log(res);
-        //dispatch({  type: UPDATE_FOXES, payload: res.data });
+        dispatch({  type: UPDATE_FOXES, payload: res.data });
       })
-      .catch(err => console.log('There was an error fetching foxes', err));
+      .catch(err => console.log('There was an error fetching foxes', err.message));
    
 };
