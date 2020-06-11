@@ -4,19 +4,19 @@ import { getFoxes } from '../actions' //import action from actions folder. actio
 
 const FoxForm = props => {
 
-  const handleFetch = e => {
+  const handleFetch = e => { //handles button click
     e.preventDefault();
     props.getFoxes();
   };
 
   return (
     <Fragment>
-      <h2>Add some floofy, adorable, cuteness in your life by clicking the button. </h2>
+      <h2>Click the Floof! button to add cuteness to your day.</h2>
       {/* // if fetching data is true show the message, if not show the button */}
       {props.isFetchingData ? (
-        <div> ...fetching the floofiness...</div>
+        <div className='loading'> ...fetching the floofiness...</div>
       ) : (
-      <button onClick={handleFetch}> Floof!</button>
+      <button onClick={handleFetch} className='btn'> Floof!</button>
       )}
       
     </Fragment>
